@@ -5,7 +5,7 @@ on: [push]
 env:
   ROM_URL: https://tdrive.elytra8.workers.dev/OnePlus5TOxygen_43_OTA_069_all_2010292144_de4a6fa.zip
   ROM_NAME: OxygenOS
-  ZIP_NAME: Oneplus 5t
+  ZIP_NAME: Oneplus_5
   TZ: Asia/Kolkata
 jobs:
   build:
