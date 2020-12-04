@@ -3,9 +3,9 @@ name: Building op5 GSI..
 on: [push]
 
 env:
-  ROM_URL: https://tdrive.elytra8.workers.dev/OnePlus5Oxygen_23_OTA_069_all_2010292138_6700.zip
-  ROM_NAME: OxygenOS
-  ZIP_NAME: Oneplus_5
+  ROM_URL: https://tdrive.elytra8.workers.dev/arvanasoft_GINKGOMIUI_ID_V12.0.1.0.QCOIDXM_10.0.FREE.zip
+  ROM_NAME: MIUI
+  ZIP_NAME: MIUIGinkgo
   TZ: Asia/Kolkata
 jobs:
   build:
@@ -47,8 +47,7 @@ jobs:
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
               cd ErfanGSIs/output
-              zip -r $ZIP_NAME-GSI-Aonly.7z *-Aonly-*.img
-              touch links.txt
+              zip -r $ZIP_NAME-GSI-Aonly.7z *by-yash-Aonly-*.img
               expect -c " 
               spawn sftp ${{ secrets.SFUSER }}@frs.sourceforge.net
               expect \"yes/no\"
@@ -60,16 +59,14 @@ jobs:
               set timeout -1
               send \"put $ZIP_NAME-GSI-Aonly.7z\r\"
               expect \"Uploading\"
-              expect \"100%\"
-              grep Download >> links.txt       
+              expect \"100%\"     
               expect \"sftp>\"
               send \"bye\r\"
-              grep Download >> links.txt
               interact"      
        - name: Zip AB and upload 
          run: |
               cd ErfanGSIs/output
-              zip -r $ZIP_NAME-GSI-AB.7z *-AB-*.img
+              zip -r $ZIP_NAME-GSI-AB.7z *by-yash-AB-*.img
               expect -c " 
               spawn sftp ${{ secrets.SFUSER }}@frs.sourceforge.net
               expect \"Password\"        
@@ -85,7 +82,5 @@ jobs:
               interact"
        - name: Print build info
          run: |
-              cat ErfanGSIs/output/*-Aonly-*.txt
-              cat ErfanGSIs/output/links.txt
-         
+              cat ErfanGSIs/output/*-Aonly-*.txt    
             
