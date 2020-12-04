@@ -5,7 +5,7 @@ on: [push]
 env:
   ROM_URL: https://tdrive.elytra8.workers.dev/OnePlus8Oxygen_15.I.30_OTA_0300_all_2009301821_09620bbd4a.zip
   ROM_NAME: OxygenOS
-  ZIP_NAME: Onplus_8_A11
+  ZIP_NAME: Oneplus8-A11-oos11
   TZ: Asia/Kolkata
 jobs:
   build:
@@ -28,10 +28,9 @@ jobs:
          run: |
             sudo -E apt-get -qq update
             sudo -E apt-get -qq install git openjdk-8-jdk wget expect
-
        
        - name: Clone ErfanGSI Source Code
-         run: git clone --recurse-submodules https://github.com/Area69Lab/GSI-Automation.git
+         run: git clone --recurse-submodules https://github.com/Area69Lab/ErfanGSIs
        
        - name: Setting up ErfanGSI requirements
          run: |
@@ -59,7 +58,7 @@ jobs:
               set timeout -1
               send \"put $ZIP_NAME-GSI-Aonly.7z\r\"
               expect \"Uploading\"
-              expect \"100%\"     
+              expect \"100%\"
               expect \"sftp>\"
               send \"bye\r\"
               interact"      
@@ -82,5 +81,4 @@ jobs:
               interact"
        - name: Print build info
          run: |
-              cat ErfanGSIs/output/*-Aonly-*.txt    
-            
+              cat ErfanGSIs/output/*-Aonly-*.txt
