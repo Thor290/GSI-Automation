@@ -3,9 +3,9 @@ name: Building GSI..
 on: [push]
 
 env:
-  ROM_URL: https://tdrive.elytra8.workers.dev/OnePlus8Oxygen_15.I.30_OTA_0300_all_2009301821_09620bbd4a.zip
-  ROM_NAME: OxygenOS
-  ZIP_NAME: Oneplus8-A11-oos11
+  ROM_URL: https://tdrive.elytra8.workers.dev/miui_OLIVEWOODINGlobal_V11.0.3.0.QCQINXM_ae2ec6a050_10.0.zip
+  ROM_NAME: MIUIMinimal
+  ZIP_NAME: miuiminimal-olive-A10
   TZ: Asia/Kolkata
 jobs:
   build:
@@ -30,7 +30,7 @@ jobs:
             sudo -E apt-get -qq install git openjdk-8-jdk wget expect
        
        - name: Clone ErfanGSI Source Code
-         run: git clone --recurse-submodules https://github.com/Area69Lab/ErfanGSIs
+         run: git clone --recurse-submodules https://github.com/yashlearnpython/ErfanGSIs.git
        
        - name: Setting up ErfanGSI requirements
          run: |
@@ -46,7 +46,7 @@ jobs:
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
               cd ErfanGSIs/output
-              zip -r $ZIP_NAME-GSI-Aonly.7z *-Aonly-*.img
+              zip -r $ZIP_NAME-GSI-YashGsi-Aonly.7z *-Aonly-*.img
               expect -c " 
               spawn sftp ${{ secrets.SFUSER }}@frs.sourceforge.net
               expect \"yes/no\"
@@ -56,7 +56,7 @@ jobs:
               expect \"sftp> \"
               send \"cd ${{ secrets.SFDIR }}\r\"
               set timeout -1
-              send \"put $ZIP_NAME-GSI-Aonly.7z\r\"
+              send \"put $ZIP_NAME-GSI-YashGsi-Aonly.7z\r\"
               expect \"Uploading\"
               expect \"100%\"
               expect \"sftp>\"
@@ -65,7 +65,7 @@ jobs:
        - name: Zip AB and upload 
          run: |
               cd ErfanGSIs/output
-              zip -r $ZIP_NAME-GSI-AB.7z *-AB-*.img
+              zip -r $ZIP_NAME-GSI-YashGsi-AB.7z *-AB-*.img
               expect -c " 
               spawn sftp ${{ secrets.SFUSER }}@frs.sourceforge.net
               expect \"Password\"        
@@ -73,7 +73,7 @@ jobs:
               expect \"sftp> \"
               send \"cd ${{ secrets.SFDIR }}\r\"
               set timeout -1
-              send \"put $ZIP_NAME-GSI-AB.7z\r\"
+              send \"put $ZIP_NAME-GSI-YashGsi-AB.7z\r\"
               expect \"Uploading\"
               expect \"100%\"
               expect \"sftp>\"
