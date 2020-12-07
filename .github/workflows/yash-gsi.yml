@@ -3,9 +3,9 @@ name: Building GSI..
 on: [push]
 
 env:
-  ROM_URL: https://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus5Oxygen/OnePlus5Oxygen_23.J.69_GLO_069_2010292138/OnePlus5Oxygen_23_OTA_069_all_2010292138_6700.zip
-  ROM_NAME: OPMinimal
-  ZIP_NAME: Oneplus_5
+  ROM_URL: https://tdrive.elytra8.workers.dev/OnePlus7THydrogen_14.H.17_OTA_017_all_2011091900_e92a2a1959e995.zip
+  ROM_NAME: OxygenOS
+  ZIP_NAME: Oneplus_7t_hydrogenOS
   TZ: Asia/Kolkata
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
        - name: Initializing environment
          run: |
             sudo -E apt-get -qq update
-            sudo -E apt-get -qq install git openjdk-8-jdk wget expect
+            sudo -E apt-get -qq install git openjdk-8-jdk wget expect p7zip-full p7zip-rar
        
        - name: Clone ErfanGSI Source Code
          run: git clone --recurse-submodules https://github.com/yashlearnpython/ErfanGSIs.git
@@ -46,7 +46,7 @@ jobs:
               mkdir final
               sudo chmod -R 777 ErfanGSIs/output
               cd ErfanGSIs/output
-              zip -r $ROM_NAME-$ZIP_NAME-GSI-YashGsi-Aonly.7z *-Aonly-*.img
+              7z a $ROM_NAME-$ZIP_NAME-GSI-YashGsi-Aonly.7z *-Aonly-*.img
               expect -c " 
               spawn sftp ${{ secrets.SFUSER }}@frs.sourceforge.net
               expect \"yes/no\"
@@ -65,7 +65,7 @@ jobs:
        - name: Zip AB and upload 
          run: |
               cd ErfanGSIs/output
-              zip -r $ROM_NAME-$ZIP_NAME-GSI-YashGsi-AB.7z *-AB-*.img
+              7z a $ROM_NAME-$ZIP_NAME-GSI-YashGsi-AB.7z *-AB-*.img
               expect -c " 
               spawn sftp ${{ secrets.SFUSER }}@frs.sourceforge.net
               expect \"Password\"        
