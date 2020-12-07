@@ -3,9 +3,9 @@ name: Building GSI..
 on: [push]
 
 env:
-  ROM_URL: https://tdrive.elytra8.workers.dev/OnePlus7Hydrogen_13.X.10_OTA_010_all_1909112309_03cc83f7610b4948.zip
+  ROM_URL: https://tdrive.elytra8.workers.dev/OnePlus5THydrogen_43_OTA_064_all_2009080056_338a836209c54a7e.zip
   ROM_NAME: OxygenOS
-  ZIP_NAME: Oneplus_7_hydrogenOS
+  ZIP_NAME: Oneplus_5t_hydrogenOS
   TZ: Asia/Kolkata
 jobs:
   build:
