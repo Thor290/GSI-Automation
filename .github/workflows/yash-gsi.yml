@@ -3,9 +3,9 @@ name: Building GSI..
 on: [push]
 
 env:
-  ROM_URL: https://tdrive.elytra8.workers.dev/miui-blockota-angelicain_in_global-V12.0.2.0.QCRINXM-V12.0.3.0.QCRINXM-33342658f8-10.0.zip
-  ROM_NAME: MIUI
-  ZIP_NAME: poco_c3_V12.0.3.0_test
+  ROM_URL: https://tdrive.elytra8.workers.dev/op7pro_ob19.zip
+  ROM_NAME: OxygenOS
+  ZIP_NAME: redmi_note_7_oos_cyberprunk_edition
   TZ: Asia/Kolkata
 jobs:
   build:
