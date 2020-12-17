@@ -4,7 +4,7 @@ on: [push]
 
 env:
   ROM_URL: https://tdrive.elytra8.workers.dev/OnePlus6TOxygen_34_OTA_047_all_2007171912_ac6dc9b.zip
-  ROM_NAME: OxygenOS
+  ROM_NAME: OPMinimal
   ZIP_NAME: Oneplus_6t
   TZ: Asia/Kolkata
 jobs:
