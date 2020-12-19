@@ -4,7 +4,7 @@ on: [push]
 
 env:
   ROM_URL: https://tdrive.elytra8.workers.dev/INS-M017FXXU1BTI5-20200914180539.zip
-  ROM_NAME: ONEUI
+  ROM_NAME: OneUI
   ZIP_NAME: oneui_2.5_m01s
   TZ: Asia/Kolkata
 jobs:
