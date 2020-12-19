@@ -3,9 +3,9 @@ name: Building GSI..
 on: [push]
 
 env:
-  ROM_URL: https://tdrive.elytra8.workers.dev/OnePlus6TOxygen_34_OTA_047_all_2007171912_ac6dc9b.zip
-  ROM_NAME: OPMinimal
-  ZIP_NAME: Oneplus_6t
+  ROM_URL: https://tdrive.elytra8.workers.dev/INS-M017FXXU1BTI5-20200914180539.zip
+  ROM_NAME: ONEUI
+  ZIP_NAME: oneui_2.5_m01s
   TZ: Asia/Kolkata
 jobs:
   build:
