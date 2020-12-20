@@ -3,9 +3,9 @@ name: Building GSI..
 on: [push]
 
 env:
-  ROM_URL: https://tdrive.elytra8.workers.dev/INS-M017FXXU1BTI5-20200914180539.zip
-  ROM_NAME: OneUI
-  ZIP_NAME: oneui_2.5_m01s
+  ROM_URL: https://tdrive.elytra8.workers.dev/OnePlus%207%20Pro%20Cyberpunk%20Edition.zip
+  ROM_NAME: OxygenOS
+  ZIP_NAME: Oneplus_7_pro
   TZ: Asia/Kolkata
 jobs:
   build:
