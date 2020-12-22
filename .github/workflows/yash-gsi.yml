@@ -3,9 +3,9 @@ name: Building GSI..
 on: [push]
 
 env:
-  ROM_URL: https://tdrive.elytra8.workers.dev/RROS-Q-8.6.5-20201216-lavender-Unofficial.zip
-  ROM_NAME: Generic
-  ZIP_NAME: Resurrection Remix 8.6.5 Final
+  ROM_URL: https://download.pixelexperience.org/changelog/violet/PixelExperience_Plus_violet-10.0-20201222-0539-OFFICIAL.zip/
+  ROM_NAME: Pixel
+  ZIP_NAME: Pixel Xperience 22/12/20
   TZ: Asia/Kolkata
 jobs:
   build:
