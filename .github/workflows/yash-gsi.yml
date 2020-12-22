@@ -3,7 +3,7 @@ name: Building GSI..
 on: [push]
 
 env:
-  ROM_URL: https://sourceforge.net/projects/lavender7/files/Resurrectionremix/Android-Q/RROS-Q-8.6.5-20201216-lavender-Unofficial.zip/download
+  ROM_URL: https://tdrive.elytra8.workers.dev/RROS-Q-8.6.5-20201216-lavender-Unofficial.zip
   ROM_NAME: Generic
   ZIP_NAME: Resurrection Remix 8.6.5 Final
   TZ: Asia/Kolkata
