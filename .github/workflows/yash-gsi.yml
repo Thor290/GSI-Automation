@@ -3,9 +3,9 @@ name: Building GSI..
 on: [push]
 
 env:
-  ROM_URL: https://tdrive.elytra8.workers.dev/miui_OLIVELITEGlobal_V11.0.3.0.QCPMIXM_e615013e25_10.0.zip
-  ROM_NAME: MIUI
-  ZIP_NAME: Redmi_8A_GB
+  ROM_URL: https://tdrive.elytra8.workers.dev/AOSiP-11-Ravioli-lavender-20201218-2202.zip
+  ROM_NAME: Generic
+  ZIP_NAME: aosip
   TZ: Asia/Kolkata
 jobs:
   build:
